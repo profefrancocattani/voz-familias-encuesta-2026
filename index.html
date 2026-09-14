@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La voz de las familias · Encuesta 2026</title>
+<style>
+:root{
+  color-scheme: light;
+  --plane:#f7f6f2; --surface:#fcfcfb; --surface-2:#f2f1ec;
+  --ink:#14140f; --ink-2:#4a4943; --ink-3:#82807a;
+  --rule:#e3e1d8; --rule-2:#cfcdc2;
+  --accent:#2a78d6; --accent-soft:#cde2fb;
+  --band:#0d366b;
+  --warm:#8a5a2b;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --maxw: 46rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --plane:#0d0d0c; --surface:#1a1a19; --surface-2:#232322;
+    --ink:#f4f3ee; --ink-2:#c3c2b7; --ink-3:#918f88;
+    --rule:#2c2c2a; --rule-2:#3d3d3a;
+    --accent:#3987e5; --accent-soft:#184f95;
+    --band:#9ec5f4; --warm:#d9a066;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --plane:#0d0d0c; --surface:#1a1a19; --surface-2:#232322;
+  --ink:#f4f3ee; --ink-2:#c3c2b7; --ink-3:#918f88;
+  --rule:#2c2c2a; --rule-2:#3d3d3a;
+  --accent:#3987e5; --accent-soft:#184f95;
+  --band:#9ec5f4; --warm:#d9a066;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--ink);font-family:var(--serif);
+     font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:74rem;margin:0 auto;padding:0 1.5rem;display:grid;
+      grid-template-columns:15rem minmax(0,1fr);gap:3.5rem;align-items:start}
+@media (max-width:70rem){.wrap{grid-template-columns:1fr;gap:0}}
+
+/* ---------- índice ---------- */
+nav.toc{position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:2.5rem 0 3rem;
+        font-family:var(--sans);font-size:13.5px;line-height:1.45}
+@media (max-width:70rem){nav.toc{position:static;max-height:none;padding:1.5rem 0 0;
+  border-bottom:1px solid var(--rule);margin-bottom:2rem}}
+nav.toc .tt{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
+            margin:0 0 .9rem}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc li{margin:0 0 .1rem}
+nav.toc a{display:block;padding:.34rem .6rem;color:var(--ink-2);text-decoration:none;
+          border-left:2px solid transparent;border-radius:0 3px 3px 0}
+nav.toc a:hover{background:var(--surface-2);color:var(--ink)}
+nav.toc a.on{border-left-color:var(--accent);color:var(--ink);background:var(--surface-2)}
+nav.toc .num{color:var(--ink-3);font-variant-numeric:tabular-nums;margin-right:.45rem}
+
+main{padding:2.5rem 0 6rem;min-width:0}
+
+/* ---------- tipografía ---------- */
+.eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+         color:var(--ink-3);margin:0 0 .8rem}
+h1{font-size:2.6rem;line-height:1.12;margin:0 0 1rem;font-weight:600;letter-spacing:-.015em;max-width:var(--maxw)}
+h2{font-size:1.5rem;line-height:1.25;margin:0 0 .3rem;font-weight:600;letter-spacing:-.01em;max-width:var(--maxw)}
+h3{font-size:1.08rem;margin:2.2rem 0 .5rem;font-weight:600;max-width:var(--maxw)}
+h4{font-family:var(--sans);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;
+   color:var(--ink-3);margin:1.6rem 0 .6rem;font-weight:600}
+p{margin:0 0 1.05rem;max-width:var(--maxw)}
+.lead{font-size:1.13rem;line-height:1.55;color:var(--ink-2)}
+a{color:inherit}
+section{padding:3.2rem 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0;padding-top:0}
+.sec-head{display:flex;gap:1rem;align-items:baseline;margin-bottom:1.4rem}
+.sec-num{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--accent);
+         letter-spacing:.06em;padding-top:.35rem;min-width:1.6rem}
+ul.plain{margin:0 0 1.05rem;padding-left:1.15rem;max-width:var(--maxw)}
+ul.plain li{margin-bottom:.45rem}
+strong{font-weight:600}
+em.q{font-style:normal;background:linear-gradient(transparent 62%,var(--accent-soft) 62%)}
+
+/* ---------- portada ---------- */
+.portada{background:var(--surface);border:1px solid var(--rule);border-radius:4px;
+         padding:2.6rem 2.4rem;margin-bottom:.5rem}
+.prot{font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.04em;
+      display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-bottom:1.8rem;
+      padding-bottom:1.2rem;border-bottom:1px solid var(--rule)}
+.cifra-fila{display:flex;flex-wrap:wrap;gap:2.4rem;margin:2rem 0 .4rem;font-family:var(--sans)}
+.cifra .v{font-size:2.9rem;line-height:1;font-weight:600;letter-spacing:-.02em}
+.cifra .l{font-size:12.5px;color:var(--ink-2);margin-top:.4rem;max-width:12rem;line-height:1.35}
+.preguntas{font-family:var(--sans);font-size:14px;color:var(--ink-2);margin:2rem 0 0;
+           padding-top:1.4rem;border-top:1px solid var(--rule)}
+.preguntas ol{margin:.7rem 0 0;padding-left:1.3rem}
+.preguntas li{margin-bottom:.35rem}
+
+/* ---------- gráficos ---------- */
+figure{margin:1.6rem 0 1.8rem;background:var(--surface);border:1px solid var(--rule);
+       border-radius:4px;padding:1.3rem 1.4rem 1.1rem}
+figcaption{font-family:var(--sans);font-size:13px;color:var(--ink-2);margin-bottom:1rem;
+           line-height:1.4}
+figcaption b{color:var(--ink);font-weight:600;display:block;font-size:14px;margin-bottom:.15rem}
+.chart{font-family:var(--sans);font-size:13px}
+.row{display:grid;grid-template-columns:minmax(8rem,14.5rem) 1fr auto;gap:.8rem;
+     align-items:center;padding:.18rem 0;position:relative}
+.row .cat{color:var(--ink-2);text-align:right;line-height:1.25;font-size:12.5px}
+.track{background:var(--rule);opacity:1;height:16px;border-radius:2px;position:relative;overflow:visible}
+.bar{height:16px;background:var(--accent);border-radius:0 4px 4px 0;min-width:2px}
+.row .val{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;font-size:12.5px;
+          min-width:2.9rem;text-align:right}
+.row:hover .track{background:var(--rule-2)}
+.tip{position:absolute;left:0;bottom:calc(100% + 6px);background:var(--ink);color:var(--plane);
+     font-size:11.5px;padding:.3rem .55rem;border-radius:3px;white-space:nowrap;
+     opacity:0;pointer-events:none;transition:opacity .12s;z-index:5}
+.row:hover .tip,.row:focus-within .tip{opacity:1}
+.row:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+details.tabla{margin-top:.9rem;font-family:var(--sans);font-size:12.5px}
+details.tabla summary{cursor:pointer;color:var(--ink-3);padding:.2rem 0}
+details.tabla table{border-collapse:collapse;margin-top:.6rem;width:100%;max-width:32rem}
+details.tabla th,details.tabla td{text-align:left;padding:.28rem .7rem .28rem 0;
+  border-bottom:1px solid var(--rule);font-weight:400;color:var(--ink-2)}
+details.tabla th{color:var(--ink-3);font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+details.tabla td.n{font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+
+/* ---------- citas ---------- */
+blockquote{margin:1.5rem 0;padding:0 0 0 1.1rem;border-left:2px solid var(--accent);
+           max-width:var(--maxw)}
+blockquote p{font-size:1.04rem;line-height:1.5;margin:0 0 .45rem}
+blockquote cite{font-family:var(--sans);font-size:11.5px;font-style:normal;color:var(--ink-3);
+                letter-spacing:.03em}
+
+/* ---------- fichas ---------- */
+.ficha{background:var(--surface);border:1px solid var(--rule);border-radius:4px;
+       padding:1.5rem 1.6rem;margin:0 0 1.1rem;break-inside:avoid}
+.ficha-top{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:baseline;
+           justify-content:space-between;margin-bottom:.2rem}
+.ficha h3{margin:0;font-size:1.14rem}
+.ficha .n{font-family:var(--sans);font-size:12.5px;color:var(--ink-2)}
+.ficha .n b{font-size:1.35rem;color:var(--ink);font-weight:600;margin-right:.25rem}
+.meta{font-family:var(--sans);font-size:12px;color:var(--ink-3);margin:.5rem 0 1rem;
+      padding-bottom:.9rem;border-bottom:1px solid var(--rule);line-height:1.5}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media (max-width:38rem){.dos{grid-template-columns:1fr}}
+.dos h4{margin-top:0}
+.tags{font-family:var(--sans);font-size:12.5px;color:var(--ink-2);margin:0;padding:0;list-style:none}
+.tags li{margin-bottom:.3rem;display:flex;gap:.5rem;align-items:baseline}
+.tags .c{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;min-width:1.6rem}
+.ficha blockquote{margin:1.1rem 0 0;font-size:.97rem}
+.ficha blockquote p{font-size:.99rem}
+
+.ficha .cierre{font-family:var(--sans);font-size:12.5px;color:var(--ink-2);
+  margin:1.1rem 0 0;padding-top:.9rem;border-top:1px solid var(--rule);max-width:none}
+
+/* ---------- avisos ---------- */
+.nota{background:var(--surface-2);border:1px solid var(--rule);border-left:3px solid var(--warm);
+      border-radius:0 4px 4px 0;padding:1.1rem 1.3rem;margin:1.6rem 0;max-width:var(--maxw)}
+.nota p{margin:0 0 .6rem;font-size:.97rem;color:var(--ink-2)}
+.nota p:last-child{margin-bottom:0}
+.nota .t{font-family:var(--sans);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
+         color:var(--warm);font-weight:600;margin-bottom:.5rem}
+
+.bloques{display:grid;gap:1rem;margin:1.5rem 0}
+.bloque{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:1.3rem 1.4rem}
+.bloque h4{margin:0 0 .7rem;color:var(--accent)}
+.bloque ul{margin:0;padding-left:1.15rem}
+.bloque li{margin-bottom:.5rem;font-size:.99rem}
+
+table.datos{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13px;margin:1.4rem 0}
+table.datos th,table.datos td{text-align:left;padding:.55rem .8rem .55rem 0;border-bottom:1px solid var(--rule)}
+table.datos th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+table.datos td{color:var(--ink-2)}
+table.datos td.n,table.datos th.n{font-variant-numeric:tabular-nums;text-align:right;
+  color:var(--ink);font-weight:600;width:5.5rem;padding-right:1.6rem;white-space:nowrap}
+table.datos th.n{color:var(--ink-3);font-weight:600}
+table.datos tr:last-child td{border-bottom:0}
+
+footer{border-top:1px solid var(--rule);padding:2rem 0 0;margin-top:3rem;
+       font-family:var(--sans);font-size:12px;color:var(--ink-3);line-height:1.6}
+
+@media print{
+  body{background:#fff;font-size:11pt}
+  .wrap{display:block;max-width:none;padding:0}
+  nav.toc,.tip{display:none}
+  section{page-break-inside:auto;border-top:1px solid #ddd}
+  .ficha,figure,.nota,.bloque{break-inside:avoid;border-color:#ddd}
+  h1,h2,h3{break-after:avoid}
+  details.tabla{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="toc" aria-label="Índice">
+  <p class="tt">Contenido</p>
+  <ol>
+    <li><a href="#apertura">Apertura</a></li>
+    <li><a href="#metodo"><span class="num">1</span>Cómo leer estos números</a></li>
+    <li><a href="#panorama"><span class="num">2</span>Panorama diocesano</a></li>
+    <li><a href="#reconocen"><span class="num">3</span>Lo que las familias reconocen</a></li>
+    <li><a href="#piden"><span class="num">4</span>Lo que piden</a></li>
+    <li><a href="#niveles"><span class="num">5</span>Lectura por nivel</a></li>
+    <li><a href="#fichas"><span class="num">6</span>Ficha por comunidad</a></li>
+    <li><a href="#senales"><span class="num">7</span>Señales que piden respuesta</a></li>
+    <li><a href="#decisiones"><span class="num">8</span>Decisiones que abre este material</a></li>
+    <li><a href="#estado"><span class="num">9</span>Estado de la muestra</a></li>
+    <li><a href="#anexos">Anexos</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ============ APERTURA ============ -->
+<section id="apertura">
+  <div class="portada">
+    <p class="prot"><span>Prot. 67/2026 · JUREC</span><span>Proyecto Pastoral Educativo Diocesano</span><span>Merlo-Moreno · 2026</span></p>
+    <p class="eyebrow">Encuesta a las familias</p>
+    <h1>La voz de las familias</h1>
+    <p class="lead">En abril de 2026 el Equipo de Pastoral Educativa envió cinco preguntas
+    abiertas a las familias de las escuelas de la diócesis. Este documento reúne lo que
+    contestaron.</p>
+
+    <div class="cifra-fila">
+      <div class="cifra"><div class="v">304</div><div class="l">familias respondieron por escrito</div></div>
+      <div class="cifra"><div class="v">7</div><div class="l">comunidades educativas</div></div>
+      <div class="cifra"><div class="v">1.398</div><div class="l">respuestas abiertas, transcritas una por una</div></div>
+    </div>
+
+    <div class="preguntas">
+      Las preguntas fueron:
+      <ol>
+        <li>¿Qué es lo que más valoran de la escuela?</li>
+        <li>¿Por qué eligieron esta institución educativa para la formación de sus hijos/as?</li>
+        <li>¿Qué valores o actitudes positivas notan que la escuela está promoviendo en su hijo/a?</li>
+        <li>¿Hay algo que les gustaría que la escuela trabaje más (emocional, espiritual, social, académico, etc.)?</li>
+        <li>¿Qué sugerencias o propuestas quisieran compartir para seguir creciendo como comunidad educativa?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1 · MÉTODO ============ -->
+<section id="metodo">
+  <div class="sec-head"><div class="sec-num">01</div><div>
+    <h2>Cómo leer estos números</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">De dónde salen las cifras y qué se puede pedirles</p>
+  </div></div>
+
+  <p>Las respuestas llegaron por tres caminos distintos y eso condiciona todo lo que sigue.
+  Perpetuo Socorro y los dos jardines con formulario contestaron en línea, con un texto ya
+  digital. Itatí y San José de Moreno respondieron por correo, cada familia con su archivo
+  adjunto. Las demás escribieron a mano, en hojas que llegaron escaneadas o fotografiadas:
+  esas 161 respuestas se transcribieron leyendo cada página.</p>
+
+  <figure>
+    <figcaption><b>Cómo llegaron las respuestas</b>304 familias</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Papel escaneado</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">161 familias · 53% del total</div></div><div class="val">161</div></div>
+      <div class="row" tabindex="0"><div class="cat">Formulario en línea</div><div class="track"><div class="bar" style="width:47.2%"></div><div class="tip">76 familias · 25% del total</div></div><div class="val">76</div></div>
+      <div class="row" tabindex="0"><div class="cat">Correo con adjunto</div><div class="track"><div class="bar" style="width:41.6%"></div><div class="tip">67 familias · 22% del total</div></div><div class="val">67</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Formato</th><th class="n">Familias</th><th class="n">%</th></tr></thead><tbody>
+      <tr><td>Papel escaneado o fotografiado</td><td class="n">161</td><td class="n">53%</td></tr>
+      <tr><td>Formulario en línea</td><td class="n">76</td><td class="n">25%</td></tr>
+      <tr><td>Correo con archivo adjunto</td><td class="n">67</td><td class="n">22%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <figure>
+    <figcaption><b>Familias que respondieron, por comunidad</b>Las 8 familias cuyo colegio no figura en el texto quedan fuera de este corte</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">San José de la Libertad</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">68 familias · jardín, primaria y secundaria, dos sedes</div></div><div class="val">68</div></div>
+      <div class="row" tabindex="0"><div class="cat">Perpetuo Socorro</div><div class="track"><div class="bar" style="width:98.5%"></div><div class="tip">67 familias · primaria y secundaria</div></div><div class="val">67</div></div>
+      <div class="row" tabindex="0"><div class="cat">San Francisco de Asís</div><div class="track"><div class="bar" style="width:60.3%"></div><div class="tip">41 familias · primaria y secundaria</div></div><div class="val">41</div></div>
+      <div class="row" tabindex="0"><div class="cat">Jesús Obrero</div><div class="track"><div class="bar" style="width:57.4%"></div><div class="tip">39 familias · 25 de secundaria y 14 del Jardín «Rayito de Sol»</div></div><div class="val">39</div></div>
+      <div class="row" tabindex="0"><div class="cat">Cristo Salvador</div><div class="track"><div class="bar" style="width:44.1%"></div><div class="tip">30 familias · jardín de infantes</div></div><div class="val">30</div></div>
+      <div class="row" tabindex="0"><div class="cat">Ntra. Sra. de Itatí</div><div class="track"><div class="bar" style="width:41.2%"></div><div class="tip">28 familias · jardín, primaria y secundaria</div></div><div class="val">28</div></div>
+      <div class="row" tabindex="0"><div class="cat">San José (Moreno)</div><div class="track"><div class="bar" style="width:33.8%"></div><div class="tip">23 familias · jardín, primaria y secundaria</div></div><div class="val">23</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Comunidad</th><th>Familias</th></tr></thead><tbody>
+      <tr><td>San José de la Libertad (con sede Sumampa)</td><td class="n">68</td></tr>
+      <tr><td>Perpetuo Socorro</td><td class="n">67</td></tr>
+      <tr><td>San Francisco de Asís</td><td class="n">41</td></tr>
+      <tr><td>Jesús Obrero (con Jardín «Rayito de Sol»)</td><td class="n">39</td></tr>
+      <tr><td>Cristo Salvador</td><td class="n">30</td></tr>
+      <tr><td>Nuestra Señora de Itatí</td><td class="n">28</td></tr>
+      <tr><td>San José (Moreno)</td><td class="n">23</td></tr>
+      <tr><td>Sin colegio identificado</td><td class="n">8</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <div class="nota">
+    <p class="t">Qué se le puede pedir a estas cifras</p>
+    <p>Cada respuesta fue contada una por una, así que los totales son exactos. Lo que no
+    es exacto es la proporción: la cantidad de familias que contestó en cada escuela no
+    guarda relación con su matrícula. Perpetuo Socorro aporta 67 respuestas de un
+    formulario que circuló por primaria completa; San José de Moreno aporta 23, casi todas
+    de familias que escribieron por su cuenta.</p>
+    <p>De ahí se sigue una regla de lectura: <strong>los porcentajes de este informe
+    describen a las 304 familias que escribieron, no a las familias de la diócesis</strong>.
+    Comparar el peso de un tema entre dos escuelas dice más sobre quién contestó que sobre
+    qué piensa cada comunidad.</p>
+  </div>
+
+  <h3>Cómo se cuentan los temas</h3>
+  <p>Cada respuesta se leyó y se marcó con todos los temas que menciona: una familia que
+  habla del compromiso docente y de la enseñanza suma en las dos. Por eso los porcentajes
+  de cada pregunta suman más de cien. La base de cada porcentaje es la cantidad de familias
+  que contestaron esa pregunta, no las 304: hay preguntas que quedaron sin responder, y
+  cinco de los formularios en papel traían solo cuatro preguntas.</p>
+
+  <h3>Cómo se citan las respuestas</h3>
+  <p>Las citas textuales van con el nivel y la comunidad, sin el apellido de la familia.
+  Se respeta la redacción original, con sus errores de tipeo. Setenta de las 304 respuestas
+  llegaron sin firma, así que el criterio queda parejo para todas.</p>
+  <p>Las familias nombran con nombre propio a docentes, preceptoras y directivos, casi
+  siempre para agradecerles. Esos nombres se conservan cuando el comentario es de
+  reconocimiento. Los pocos casos donde se señala a una persona o un episodio concreto no
+  aparecen en este cuerpo: están en el anexo C, de circulación restringida.</p>
+</section>
+
+<!-- ============ 2 · PANORAMA ============ -->
+<section id="panorama">
+  <div class="sec-head"><div class="sec-num">02</div><div>
+    <h2>Panorama diocesano</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Una lectura por pregunta, sin distinguir comunidades</p>
+  </div></div>
+
+  <p>Antes de mirar cada escuela conviene ver el piso común. Estas cinco lecturas reúnen
+  las 304 respuestas sin identificar de dónde viene cada una. Lo que aparece acá es lo que
+  se repite en toda la diócesis.</p>
+
+  <figure>
+    <figcaption><b>Pregunta 1 · Qué es lo que más valoran</b>301 familias respondieron · una familia puede mencionar varios temas</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Compromiso y dedicación docente</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">93 de 301 familias · 31%</div></div><div class="val">31%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Calidez humana y trato cercano</div><div class="track"><div class="bar" style="width:78.5%"></div><div class="tip">73 de 301 familias · 24%</div></div><div class="val">24%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Acompañamiento y contención</div><div class="track"><div class="bar" style="width:71%"></div><div class="tip">66 de 301 familias · 22%</div></div><div class="val">22%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Nivel de enseñanza</div><div class="track"><div class="bar" style="width:64.5%"></div><div class="tip">60 de 301 familias · 20%</div></div><div class="val">20%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Formación religiosa y valores</div><div class="track"><div class="bar" style="width:53.8%"></div><div class="tip">50 de 301 familias · 17%</div></div><div class="val">17%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Comunicación con las familias</div><div class="track"><div class="bar" style="width:43%"></div><div class="tip">40 de 301 familias · 13%</div></div><div class="val">13%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Comunidad y participación</div><div class="track"><div class="bar" style="width:23.7%"></div><div class="tip">22 de 301 familias · 7%</div></div><div class="val">7%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Cercanía e infraestructura</div><div class="track"><div class="bar" style="width:7.5%"></div><div class="tip">7 de 301 familias · 2%</div></div><div class="val">2%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Continuidad de clases</div><div class="track"><div class="bar" style="width:4.3%"></div><div class="tip">4 de 301 familias · 1%</div></div><div class="val">1%</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Tema</th><th class="n">Familias</th><th class="n">%</th></tr></thead><tbody>
+      <tr><td>Compromiso y dedicación docente</td><td class="n">93</td><td class="n">31%</td></tr>
+      <tr><td>Calidez humana y trato cercano</td><td class="n">73</td><td class="n">24%</td></tr>
+      <tr><td>Acompañamiento y contención</td><td class="n">66</td><td class="n">22%</td></tr>
+      <tr><td>Nivel de enseñanza</td><td class="n">60</td><td class="n">20%</td></tr>
+      <tr><td>Formación religiosa y valores</td><td class="n">50</td><td class="n">17%</td></tr>
+      <tr><td>Comunicación con las familias</td><td class="n">40</td><td class="n">13%</td></tr>
+      <tr><td>Comunidad y participación</td><td class="n">22</td><td class="n">7%</td></tr>
+      <tr><td>Cercanía e infraestructura</td><td class="n">7</td><td class="n">2%</td></tr>
+      <tr><td>Continuidad de clases</td><td class="n">4</td><td class="n">1%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <figure>
+    <figcaption><b>Pregunta 2 · Por qué eligieron la institución</b>302 familias respondieron</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Recomendación y referencias</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">77 de 302 familias · 26%</div></div><div class="val">26%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Formación religiosa</div><div class="track"><div class="bar" style="width:81.8%"></div><div class="tip">63 de 302 familias · 21%</div></div><div class="val">21%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Cercanía al domicilio</div><div class="track"><div class="bar" style="width:80.5%"></div><div class="tip">62 de 302 familias · 21%</div></div><div class="val">21%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Ambiente y contención</div><div class="track"><div class="bar" style="width:63.6%"></div><div class="tip">49 de 302 familias · 16%</div></div><div class="val">16%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Herencia familiar</div><div class="track"><div class="bar" style="width:46.8%"></div><div class="tip">36 de 302 familias · 12%</div></div><div class="val">12%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Nivel académico</div><div class="track"><div class="bar" style="width:39%"></div><div class="tip">30 de 302 familias · 10%</div></div><div class="val">10%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Continuidad de niveles</div><div class="track"><div class="bar" style="width:18.2%"></div><div class="tip">14 de 302 familias · 5%</div></div><div class="val">5%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Costo accesible</div><div class="track"><div class="bar" style="width:16.9%"></div><div class="tip">13 de 302 familias · 4%</div></div><div class="val">4%</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Motivo</th><th class="n">Familias</th><th class="n">%</th></tr></thead><tbody>
+      <tr><td>Recomendación y referencias</td><td class="n">77</td><td class="n">26%</td></tr>
+      <tr><td>Formación religiosa</td><td class="n">63</td><td class="n">21%</td></tr>
+      <tr><td>Cercanía al domicilio</td><td class="n">62</td><td class="n">21%</td></tr>
+      <tr><td>Ambiente y contención</td><td class="n">49</td><td class="n">16%</td></tr>
+      <tr><td>Herencia familiar</td><td class="n">36</td><td class="n">12%</td></tr>
+      <tr><td>Nivel académico</td><td class="n">30</td><td class="n">10%</td></tr>
+      <tr><td>Continuidad de niveles</td><td class="n">14</td><td class="n">5%</td></tr>
+      <tr><td>Costo accesible</td><td class="n">13</td><td class="n">4%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <figure>
+    <figcaption><b>Pregunta 3 · Valores que ven crecer en sus hijos</b>302 familias respondieron</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Respeto</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">129 de 302 familias · 43%</div></div><div class="val">43%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Compañerismo</div><div class="track"><div class="bar" style="width:76%"></div><div class="tip">98 de 302 familias · 32%</div></div><div class="val">32%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Solidaridad</div><div class="track"><div class="bar" style="width:66.7%"></div><div class="tip">86 de 302 familias · 28%</div></div><div class="val">28%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Responsabilidad</div><div class="track"><div class="bar" style="width:58.1%"></div><div class="tip">75 de 302 familias · 25%</div></div><div class="val">25%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Empatía</div><div class="track"><div class="bar" style="width:53.5%"></div><div class="tip">69 de 302 familias · 23%</div></div><div class="val">23%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Convivencia e inclusión</div><div class="track"><div class="bar" style="width:37.2%"></div><div class="tip">48 de 302 familias · 16%</div></div><div class="val">16%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Fe y valores religiosos</div><div class="track"><div class="bar" style="width:24.8%"></div><div class="tip">32 de 302 familias · 11%</div></div><div class="val">11%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Esfuerzo y autonomía</div><div class="track"><div class="bar" style="width:13.2%"></div><div class="tip">17 de 302 familias · 6%</div></div><div class="val">6%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Honestidad y humildad</div><div class="track"><div class="bar" style="width:7%"></div><div class="tip">9 de 302 familias · 3%</div></div><div class="val">3%</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Valor</th><th class="n">Familias</th><th class="n">%</th></tr></thead><tbody>
+      <tr><td>Respeto</td><td class="n">129</td><td class="n">43%</td></tr>
+      <tr><td>Compañerismo</td><td class="n">98</td><td class="n">32%</td></tr>
+      <tr><td>Solidaridad</td><td class="n">86</td><td class="n">28%</td></tr>
+      <tr><td>Responsabilidad</td><td class="n">75</td><td class="n">25%</td></tr>
+      <tr><td>Empatía</td><td class="n">69</td><td class="n">23%</td></tr>
+      <tr><td>Convivencia e inclusión</td><td class="n">48</td><td class="n">16%</td></tr>
+      <tr><td>Fe y valores religiosos</td><td class="n">32</td><td class="n">11%</td></tr>
+      <tr><td>Esfuerzo y autonomía</td><td class="n">17</td><td class="n">6%</td></tr>
+      <tr><td>Honestidad y humildad</td><td class="n">9</td><td class="n">3%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <figure>
+    <figcaption><b>Pregunta 4 · Qué les gustaría que la escuela trabaje más</b>295 familias respondieron</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Acompañamiento emocional</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">100 de 295 familias · 34%</div></div><div class="val">34%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Lo social</div><div class="track"><div class="bar" style="width:53%"></div><div class="tip">53 de 295 familias · 18%</div></div><div class="val">18%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Lo académico</div><div class="track"><div class="bar" style="width:52%"></div><div class="tip">52 de 295 familias · 18%</div></div><div class="val">18%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Convivencia y bullying</div><div class="track"><div class="bar" style="width:49%"></div><div class="tip">49 de 295 familias · 17%</div></div><div class="val">17%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Sin pedidos</div><div class="track"><div class="bar" style="width:39%"></div><div class="tip">39 de 295 familias contestaron que no piden cambios · 13%</div></div><div class="val">13%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Lo espiritual</div><div class="track"><div class="bar" style="width:26%"></div><div class="tip">26 de 295 familias · 9%</div></div><div class="val">9%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Inglés y tecnología</div><div class="track"><div class="bar" style="width:21%"></div><div class="tip">21 de 295 familias · 7%</div></div><div class="val">7%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Vínculo con las familias</div><div class="track"><div class="bar" style="width:19%"></div><div class="tip">19 de 295 familias · 6%</div></div><div class="val">6%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Infraestructura</div><div class="track"><div class="bar" style="width:10%"></div><div class="tip">10 de 295 familias · 3%</div></div><div class="val">3%</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Pedido</th><th class="n">Familias</th><th class="n">%</th></tr></thead><tbody>
+      <tr><td>Acompañamiento emocional</td><td class="n">100</td><td class="n">34%</td></tr>
+      <tr><td>Lo social</td><td class="n">53</td><td class="n">18%</td></tr>
+      <tr><td>Lo académico</td><td class="n">52</td><td class="n">18%</td></tr>
+      <tr><td>Convivencia y bullying</td><td class="n">49</td><td class="n">17%</td></tr>
+      <tr><td>Sin pedidos</td><td class="n">39</td><td class="n">13%</td></tr>
+      <tr><td>Lo espiritual</td><td class="n">26</td><td class="n">9%</td></tr>
+      <tr><td>Inglés y tecnología</td><td class="n">21</td><td class="n">7%</td></tr>
+      <tr><td>Vínculo con las familias</td><td class="n">19</td><td class="n">6%</td></tr>
+      <tr><td>Infraestructura y mantenimiento</td><td class="n">10</td><td class="n">3%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <figure>
+    <figcaption><b>Pregunta 5 · Sugerencias y propuestas</b>198 familias respondieron · las otras 106 no tuvieron esta pregunta en su formulario o no la contestaron</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Encuentros y talleres con familias</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">51 de 198 familias · 26%</div></div><div class="val">26%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Espacios de escucha y diálogo</div><div class="track"><div class="bar" style="width:47.1%"></div><div class="tip">24 de 198 familias · 12%</div></div><div class="val">12%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Proyectos solidarios</div><div class="track"><div class="bar" style="width:33.3%"></div><div class="tip">17 de 198 familias · 9%</div></div><div class="val">9%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Comunicación institucional</div><div class="track"><div class="bar" style="width:25.5%"></div><div class="tip">13 de 198 familias · 7%</div></div><div class="val">7%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Salidas educativas</div><div class="track"><div class="bar" style="width:23.5%"></div><div class="tip">12 de 198 familias · 6%</div></div><div class="val">6%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Sin sugerencias</div><div class="track"><div class="bar" style="width:17.6%"></div><div class="tip">9 de 198 familias · 5%</div></div><div class="val">5%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Deporte y talleres</div><div class="track"><div class="bar" style="width:7.8%"></div><div class="tip">4 de 198 familias · 2%</div></div><div class="val">2%</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Propuesta</th><th class="n">Familias</th><th class="n">%</th></tr></thead><tbody>
+      <tr><td>Encuentros y talleres con familias</td><td class="n">51</td><td class="n">26%</td></tr>
+      <tr><td>Espacios de escucha y diálogo</td><td class="n">24</td><td class="n">12%</td></tr>
+      <tr><td>Proyectos solidarios y comunitarios</td><td class="n">17</td><td class="n">9%</td></tr>
+      <tr><td>Comunicación institucional</td><td class="n">13</td><td class="n">7%</td></tr>
+      <tr><td>Salidas educativas</td><td class="n">12</td><td class="n">6%</td></tr>
+      <tr><td>Sin sugerencias</td><td class="n">9</td><td class="n">5%</td></tr>
+      <tr><td>Deporte y talleres extracurriculares</td><td class="n">4</td><td class="n">2%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <div class="nota">
+    <p class="t">Una advertencia sobre la pregunta 5</p>
+    <p>106 de las 304 familias no aparecen en el último gráfico. En la enorme mayoría de
+    los casos no es que hayan omitido contestar: cinco de los cuestionarios que circularon
+    en papel —Libertad secundaria, Libertad primaria, Sumampa primaria, el jardín de Itatí
+    y el Jardín «Rayito de Sol»— traían solo cuatro preguntas impresas. A esas familias
+    nunca se les pidió una sugerencia. Leer ese hueco como desinterés sería un error de
+    lectura, no un hallazgo.</p>
+  </div>
+</section>
+
+<!-- ============ 3 · LO QUE RECONOCEN ============ -->
+<section id="reconocen">
+  <div class="sec-head"><div class="sec-num">03</div><div>
+    <h2>Lo que las familias reconocen</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Preguntas 1 y 2 · lo que valoran y por qué eligieron</p>
+  </div></div>
+
+  <p>Las dos primeras preguntas se responden entre sí. Lo que las familias eligieron
+  hace años es casi siempre lo mismo que hoy dicen valorar, y en las dos aparece antes
+  que nada un vínculo con personas concretas.</p>
+
+  <h3>El activo principal son los docentes, y las familias los nombran</h3>
+  <p>93 familias mencionan el compromiso y la dedicación docente al responder qué valoran,
+  y 73 hablan de calidez humana o trato cercano. Sumadas, son más de la mitad de las que
+  contestaron esa pregunta. Lo llamativo no es la frecuencia sino la forma: una cantidad
+  considerable de respuestas menciona a docentes y preceptoras <strong>por su nombre</strong>
+  —la seño Caro, la seño Cami, la señorita Vane, María la preceptora, el profesor de taller
+  de formación cristiana— y describe episodios puntuales de acompañamiento.</p>
+
+  <blockquote>
+    <p>«Destacamos especialmente la relación con la seño Caro, quien siempre se mostro
+    cálida, predispuesta y atenta. Gracias a su acompañamiento, la comunicación fue
+    fluida y nos sentimos contenidos y acompañados durante todo el proceso de adaptación.»</p>
+    <cite>Jardín · San José (Moreno)</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>«Valoro que la nueva directora se tomó tiempo y me atendió y escuchó, cuando lo
+    necesitamos.»</p>
+    <cite>Primaria 5° A · San José de la Libertad, sede Sumampa</cite>
+  </blockquote>
+
+  <p>Esto tiene una consecuencia práctica. El activo que las familias reconocen no está
+  depositado en un programa ni en una infraestructura: está en personas que ellas pueden
+  nombrar. Cualquier decisión que altere la composición de los equipos toca directamente
+  aquello que la encuesta muestra como fortaleza.</p>
+
+  <h3>Se elige por confianza transmitida, no por búsqueda</h3>
+  <p>El motivo de elección más frecuente es la recomendación: 77 familias dicen haber
+  llegado por lo que les contaron otros. Si a eso se le suman las 36 que eligieron por
+  herencia familiar —padres, hermanos, primos o sobrinos que pasaron por las mismas aulas—
+  y las 62 que eligieron por cercanía al domicilio, queda claro que la matrícula se
+  sostiene sobre la reputación de boca en boca dentro de un radio corto.</p>
+
+  <blockquote>
+    <p>«La decisión de la elección de la escuela fue mas por una razón de cariño que tengo,
+    ya que realicé mis estudios (al igual que mis hermanos) en esta institución, vi pasar
+    muchas curas, directivas, educadores, vi como la estructura del edificio fue avanzando,
+    y me da alegría pensar que mis hijos jueguen en el mismo patio que yo jugué.»</p>
+    <cite>Secundaria · San Francisco de Asís</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>«Por la seguridad y confianza que generación tras generación han brindado a mí familia.»</p>
+    <cite>Jardín · Nuestra Señora de Itatí</cite>
+  </blockquote>
+
+  <h3>La formación religiosa pesa en la elección más que en lo que se observa</h3>
+  <p>63 familias mencionan la orientación católica entre los motivos de elección: es el
+  segundo motivo más citado. Cuando se les pregunta qué valores ven crecer en sus hijos,
+  en cambio, solo 32 nombran la fe o lo religioso. Los valores que sí aparecen con fuerza
+  son el respeto (129), el compañerismo (98), la solidaridad (86) y la empatía (69).</p>
+
+  <p>La lectura no es que la formación religiosa haya fallado. Es que las familias la
+  reconocen traducida en trato: eligen una escuela católica y describen el resultado en
+  términos de cómo sus hijos se relacionan con los demás. Varias respuestas hacen esa
+  traducción explícita.</p>
+
+  <blockquote>
+    <p>«Al ser una institución parroquial católica, valoramos que pueda acercarse a la fe
+    de una manera acorde a su edad. Conoce sobre Jesús, aprende canciones religiosas y
+    participa de actividades que transmiten valores positivos como el amor, la solidaridad
+    y el respeto por los demás.»</p>
+    <cite>Jardín · San José (Moreno)</cite>
+  </blockquote>
+
+  <h3>Un motivo que aparece poco pero dice mucho</h3>
+  <p>Solo 13 familias mencionan el costo y 4 la continuidad de clases sin paros. Son
+  cifras chicas, y sin embargo cuando aparecen lo hacen con precisión: quienes las
+  mencionan explican que eligieron una escuela privada accesible porque necesitaban
+  previsibilidad, y algunas comparan explícitamente con la escuela pública. Son familias
+  para las que la cuota es una decisión económica ajustada, y conviene tenerlo presente
+  cuando se discuten costos de salidas, materiales o actividades.</p>
+
+  <blockquote>
+    <p>«Elegimos esta institución educativa porque, dentro de las opciones privadas, nos
+    resultó accesible económicamente y valoramos la continuidad de las clases.»</p>
+    <cite>Jardín · San José (Moreno)</cite>
+  </blockquote>
+</section>
+
+<!-- ============ 4 · LO QUE PIDEN ============ -->
+<section id="piden">
+  <div class="sec-head"><div class="sec-num">04</div><div>
+    <h2>Lo que piden</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Preguntas 4 y 5 · ordenado por frecuencia y por quién puede resolverlo</p>
+  </div></div>
+
+  <p>Antes del detalle conviene registrar el tono. 39 familias contestaron a la pregunta 4
+  que no piden nada, y muchas de las que sí piden lo hacen después de aclarar que están
+  conformes. No hay en las 304 respuestas ningún reclamo de cambio de rumbo. Lo que hay
+  son pedidos concretos, casi todos formulados como continuidad de algo que ya existe:
+  «que sigan», «que continúen fortaleciendo», «que profundicen».</p>
+
+  <h3>1 · Acompañamiento emocional — 100 familias</h3>
+  <p>Es el pedido que encabeza en las siete comunidades sin excepción. Una de cada tres
+  familias que contestó la pregunta 4 lo menciona. No aparece como queja: aparece como
+  reconocimiento de que la escuela ya contiene, seguido de un pedido de herramientas.</p>
+  <blockquote>
+    <p>«Estamos muy conforme con el trabajo que realiza la escuela, nos gustaría que
+    continúen fortaleciendo el acompañamiento emocional de los alumnos.»</p>
+    <cite>Secundaria · San José de la Libertad</cite>
+  </blockquote>
+  <p>Dentro de este pedido conviven cosas distintas según la edad. En jardín se habla de
+  gestión de emociones, tolerancia a la frustración y berrinches. En secundaria aparecen
+  ansiedad, salud mental y, en tres respuestas, autolesiones. Ese subconjunto se trata
+  aparte, en la sección 7.</p>
+
+  <h3>2 · Convivencia y bullying — 49 familias</h3>
+  <p>El segundo bloque temático. Aparece en las siete comunidades y crece en primaria y
+  secundaria. Las familias piden que se trabaje antes de que el conflicto exista, y varias
+  distinguen entre lo que se enseña y lo que se practica.</p>
+  <blockquote>
+    <p>«Sugiero que como comunidad se hagan más presentes los valores de respeto, hacia
+    mayores y pares, e igualdad porque aún se encuentran presentes discriminación y falta
+    del mismo.»</p>
+    <cite>Secundaria · San Francisco de Asís</cite>
+  </blockquote>
+
+  <h3>3 · Vínculo con las familias — 51 familias en la pregunta 5</h3>
+  <p>Es la propuesta más repetida de todo el material: talleres para padres, charlas,
+  jornadas abiertas, encuentros comunitarios. Hay que leerla junto con la sección 3: son
+  familias que ya se sienten parte y piden más ocasiones de estarlo. Una respuesta agrega
+  una condición práctica que conviene no perder.</p>
+  <blockquote>
+    <p>«Que cuando invitan a las familias a un taller o actos sean cerca del horario de
+    salida ya que muchas familias trabajan y es complicado ir y venir, o no poder estar
+    presente con su hijo.»</p>
+    <cite>Primaria 1° A · Perpetuo Socorro</cite>
+  </blockquote>
+
+  <h3>4 · Lo académico — 52 familias</h3>
+  <p>El pedido académico es más específico de lo que suele suponerse. No se pide «más
+  nivel»: se pide inglés y computación desde primer grado (21 familias), técnicas de
+  estudio, metodologías menos centradas en el trabajo práctico, y orientación vocacional
+  antes del último año.</p>
+  <blockquote>
+    <p>«Es no esperar a 6to año el test vocacional, si no empezar a realizarlo a partir de
+    4to año, ya que algunos estudiantes cuentan con esa inquietud.»</p>
+    <cite>Secundaria · San Francisco de Asís</cite>
+  </blockquote>
+
+  <h3>5 · Infraestructura y mantenimiento — 10 familias</h3>
+  <p>Es el tema menos mencionado de la pregunta 4, y aun así el que más se repite palabra
+  por palabra: baños, pintura, climatización de las aulas, agua fría accesible para los
+  estudiantes, insumos de higiene. Aparece en cinco de las siete comunidades. Varias
+  familias lo plantean ofreciéndose a colaborar.</p>
+  <blockquote>
+    <p>«Quizás podrían implementar rifas, sorteos o actividades solidarias para recaudar
+    fondos y ayudar a cubrir esos gastos contando con el acompañamiento de las familias.»</p>
+    <cite>Jardín · Cristo Salvador</cite>
+  </blockquote>
+
+  <h3>6 · Comunicación institucional — 13 familias</h3>
+  <p>Un grupo chico y consistente pide criterios de comunicación: que los avisos generales
+  no se usen para señalar incumplimientos de unos pocos, que la información llegue por
+  canal oficial antes que por los grupos de mensajería, y que haya un lugar donde plantear
+  una inquietud y saber qué pasó con ella.</p>
+</section>
+
+<!-- ============ 5 · POR NIVEL ============ -->
+<section id="niveles">
+  <div class="sec-head"><div class="sec-num">05</div><div>
+    <h2>Lectura por nivel</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">La misma pregunta cambia de contenido según la edad</p>
+  </div></div>
+
+  <p>De las 304 familias, 256 dejaron identificado el nivel de sus hijos. Separadas por
+  nivel, las respuestas dejan de parecerse.</p>
+
+  <figure>
+    <figcaption><b>Acompañamiento emocional, por nivel</b>Porcentaje de familias de cada nivel que lo mencionan en la pregunta 4</figcaption>
+    <div class="chart">
+      <div class="row" tabindex="0"><div class="cat">Secundaria · 97 familias</div><div class="track"><div class="bar" style="width:100%"></div><div class="tip">39 de 97 familias de secundaria · 40%</div></div><div class="val">40%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Primaria · 81 familias</div><div class="track"><div class="bar" style="width:67.5%"></div><div class="tip">22 de 81 familias de primaria · 27%</div></div><div class="val">27%</div></div>
+      <div class="row" tabindex="0"><div class="cat">Jardín · 78 familias</div><div class="track"><div class="bar" style="width:57.5%"></div><div class="tip">18 de 78 familias de jardín · 23%</div></div><div class="val">23%</div></div>
+    </div>
+    <details class="tabla"><summary>Ver como tabla</summary>
+      <table><thead><tr><th>Nivel</th><th>Familias</th><th>Lo mencionan</th><th>%</th></tr></thead><tbody>
+      <tr><td>Secundaria</td><td class="n">97</td><td class="n">39</td><td class="n">40%</td></tr>
+      <tr><td>Primaria</td><td class="n">81</td><td class="n">22</td><td class="n">27%</td></tr>
+      <tr><td>Jardín</td><td class="n">78</td><td class="n">18</td><td class="n">23%</td></tr>
+      </tbody></table>
+    </details>
+  </figure>
+
+  <h3>Jardín · 78 familias</h3>
+  <p>Es el nivel con más conformidad declarada: 18 familias contestan directamente que no
+  piden nada. Cuando piden, los pedidos son acotados y materiales —salidas educativas,
+  desayuno saludable, pintura, arreglos del patio— y casi siempre vienen envueltos en
+  agradecimiento. El pedido emocional que aparece acá es de otra naturaleza: gestión de
+  emociones a los tres y cuatro años, tolerancia a la frustración, aprender a compartir.</p>
+  <blockquote>
+    <p>«Me gustaria que la escuela aborde el manejo de las emociones personales y de los
+    otros, la tolerancia a la frustación cuando algo no les sale, la paciencia, entender
+    qué le pasa al otro cuando rompe o quita un juguete.»</p>
+    <cite>Jardín · Nuestra Señora de Itatí</cite>
+  </blockquote>
+
+  <h3>Primaria · 81 familias</h3>
+  <p>El nivel donde más pesa lo académico: 19 de las 81 lo mencionan, la proporción más
+  alta de los tres. Se pide inglés y computación desde los primeros grados, y aparece un
+  tema propio de este nivel —el pasaje de jardín a primero, que varias familias describen
+  como abrupto.</p>
+  <blockquote>
+    <p>«Sabemos, como los otros papás, que es el primer grado y el cambio "de jardín a
+    escuela" es radical. Esperamos que al pasar el año los chicos logren adaptarse y la
+    clase pueda dictarse de una mejor forma.»</p>
+    <cite>Primaria 1° B · San José de la Libertad, sede Sumampa</cite>
+  </blockquote>
+
+  <h3>Secundaria · 97 familias</h3>
+  <p>Es el nivel con más respuestas y el que concentra los pedidos de mayor complejidad.
+  Cuatro de cada diez familias piden acompañamiento emocional. Aparecen aquí, y casi solo
+  aquí, cuatro temas ausentes en los otros niveles: salud mental adolescente, orientación
+  vocacional, uso de celulares y pantallas, y cómo se informa a las familias cuando ocurre
+  algo grave.</p>
+  <blockquote>
+    <p>«Nos gustaría que el colegio brinde más espacios para trabajar la salud mental y las
+    problemáticas que atraviesan los adolescentes.»</p>
+    <cite>Secundaria 5° B · San Francisco de Asís</cite>
+  </blockquote>
+  <p>Un promedio diocesano de la pregunta 4 diluye esta diferencia. El acompañamiento
+  emocional en sala de cuatro y el acompañamiento emocional en quinto año se escriben
+  igual y necesitan respuestas distintas.</p>
+
+  <div class="nota">
+    <p class="t">Sobre las 48 familias sin nivel</p>
+    <p>29 de ellas son de San Francisco de Asís, donde las hojas manuscritas no traían un
+    campo para indicarlo. Las restantes se reparten entre Itatí y las 8 familias cuyo
+    colegio tampoco figura. Ese faltante afecta a los cortes por nivel, no a los totales
+    ni al panorama diocesano.</p>
+  </div>
+</section>
+
+<!-- ============ 6 · FICHAS ============ -->
+<section id="fichas">
+  <div class="sec-head"><div class="sec-num">06</div><div>
+    <h2>Ficha por comunidad</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Mismo molde para las siete · cada hoja se puede desprender y entregar</p>
+  </div></div>
+
+  <p>Las fichas usan el mismo molde para que se puedan comparar y para que cada comunidad
+  pueda recibir la suya sin reescribir nada. Los conteos son de familias que mencionan el
+  tema, sobre el total de esa comunidad.</p>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>San José de la Libertad</h3><div class="n"><b>68</b>familias</div></div>
+    <p class="meta">36 de secundaria · 22 de primaria · 10 de jardín — dos sedes, Libertad y Sumampa.
+    Todas las respuestas llegaron manuscritas y escaneadas, en cinco tandas distintas.
+    Ninguno de sus cuestionarios traía la pregunta 5.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">26</span>Compromiso y dedicación docente</li>
+        <li><span class="c">14</span>Nivel de enseñanza</li>
+        <li><span class="c">13</span>Acompañamiento y contención</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">20</span>Acompañamiento emocional</li>
+        <li><span class="c">18</span>Lo académico</li>
+        <li><span class="c">12</span>Lo social</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«Desde que mis niños comenzaron en la escuela valoro mucho la calidad humana que
+      se observa en la referente principal de la escuela y todo el equipo de docentes. Se
+      nota un acompañamiento para con los estudiantes más allá del rol docente.»</p>
+      <cite>Primaria 5° A y 3° B · sede Libertad</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Me gustaría que se continúe trabajando con el mantenimiento de algunos espacios,
+      como por ejemplo el baño. Que se evalúe la posibilidad de contar con dispensers de
+      agua fría en sectores accesibles para los estudiantes.»</p>
+      <cite>Primaria · sede Libertad</cite>
+    </blockquote>
+    <p class="cierre">
+    Es la comunidad con más respuestas y la única con los tres niveles y las dos sedes
+    representados. El pedido académico pesa acá más que en cualquier otra: inglés desde
+    primer grado aparece en cinco respuestas de Sumampa.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>Perpetuo Socorro</h3><div class="n"><b>67</b>familias</div></div>
+    <p class="meta">48 de primaria · 19 de secundaria. Primaria contestó por formulario en
+    línea; secundaria, por un formulario impreso y escaneado. Es la única comunidad donde
+    todas las respuestas son texto tipeado.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">12</span>Nivel de enseñanza</li>
+        <li><span class="c">11</span>Compromiso y dedicación docente</li>
+        <li><span class="c">8</span>Comunicación con las familias</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">17</span>Acompañamiento emocional</li>
+        <li><span class="c">15</span>Lo social</li>
+        <li><span class="c">10</span>Sin pedidos</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«Los valores a lo que apuesta la institución, como el respeto, y la empatía por el
+      otro. Porque apuesta a volver a las bases desde los valores y el respeto, cosa que
+      escasa en estos tiempos.»</p>
+      <cite>Primaria 1° A</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Que logren formar un Equipo de Orientación donde puedan formar parte profesionales
+      que atiendan las diferentes realidades de los estudiantes y sus familias, y las
+      dificultades que se presentan.»</p>
+      <cite>Secundaria</cite>
+    </blockquote>
+    <p class="cierre">
+    El equipo de orientación aparece pedido por su nombre en dos respuestas de secundaria.
+    Es también la comunidad donde más familias proponen recuperar encuentros comunitarios
+    que existían antes: festivales, locro, actos con las familias.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>San Francisco de Asís</h3><div class="n"><b>41</b>familias</div></div>
+    <p class="meta">11 identificadas de secundaria, 1 de primaria y 29 sin nivel indicado —
+    las hojas no traían campo para anotarlo. 52 páginas manuscritas, transcritas página por
+    página. Es la comunidad con las respuestas más extensas del material.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">15</span>Acompañamiento y contención</li>
+        <li><span class="c">11</span>Comunicación con las familias</li>
+        <li><span class="c">10</span>Calidez humana y trato cercano</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">20</span>Acompañamiento emocional</li>
+        <li><span class="c">12</span>Convivencia y bullying</li>
+        <li><span class="c">6</span>Lo social</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«Cada acto lo convierten en una fiesta familiar. Muchas veces acompañan a las
+      familias que están pasando por momentos vulnerables, ocupándose de cómo resolver el
+      problema.»</p>
+      <cite>Secundaria 2° A</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Sugerimos que nunca dejen de ser un espacio de puertas abiertas. Se nota
+      profundamente que al dejar la escuela y la iglesia abiertas, están demostrándonos que
+      así se construye una comunidad mejor.»</p>
+      <cite>Secundaria</cite>
+    </blockquote>
+    <p class="cierre">
+    La mitad de las familias que respondieron acá proponen algo en la pregunta 5: 17 piden
+    más encuentros con familias y 13 espacios de escucha para los estudiantes. Es también
+    la comunidad que aporta la mayor parte del material del anexo C.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>Jesús Obrero</h3><div class="n"><b>39</b>familias</div></div>
+    <p class="meta">25 de secundaria y 14 del Jardín «Rayito de Sol». La secundaria llegó
+    en un documento con las respuestas ya transcritas por la escuela; el jardín, por
+    formulario. El cuestionario del jardín traía solo cuatro preguntas.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">13</span>Compromiso y dedicación docente</li>
+        <li><span class="c">10</span>Calidez humana y trato cercano</li>
+        <li><span class="c">8</span>Acompañamiento y contención</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">15</span>Acompañamiento emocional</li>
+        <li><span class="c">6</span>Lo social</li>
+        <li><span class="c">5</span>Sin pedidos</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«Se valora muchísimo la comprensión y predisposición al momento de resolver un
+      problema o simplemente ser escuchado, tanto por el alumno como para los padres.»</p>
+      <cite>Secundaria 1° A</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Me gustaría sugerir que hagan participar a más chicos de los equipos de deporte
+      para que todos puedan participar y sentirse parte, y no se queden frustrados de no
+      haber tenido la oportunidad.»</p>
+      <cite>Secundaria 2° B</cite>
+    </blockquote>
+    <p class="cierre">
+    Es la comunidad donde el pedido emocional tiene mayor peso relativo: 15 de 39 familias.
+    En el jardín, en cambio, cinco contestan que no piden nada.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>Cristo Salvador</h3><div class="n"><b>30</b>familias</div></div>
+    <p class="meta">Jardín de infantes, los tres niveles de sala. 29 páginas manuscritas.
+    Cuatro familias contestaron escribiendo en el margen de la carta del Obispado, con
+    respuestas de dos o tres palabras.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">11</span>Calidez humana y trato cercano</li>
+        <li><span class="c">10</span>Compromiso y dedicación docente</li>
+        <li><span class="c">9</span>Nivel de enseñanza</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">7</span>Acompañamiento emocional</li>
+        <li><span class="c">6</span>Sin pedidos</li>
+        <li><span class="c">6</span>Lo social</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«Valoramos que cada niño del jardín es valorado, escuchado, comprendido y
+      respetado. Cada nene y nena es especial y todos son incluidos.»</p>
+      <cite>Jardín</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Estaría genial un colegio en el que los chicos que egresan de Cristo sean los
+      mismos que ingresan a primero. Así podrían seguir con los mismos valores, enseñanza y
+      respeto.»</p>
+      <cite>Jardín</cite>
+    </blockquote>
+    <p class="cierre">
+    Aparece acá un pedido propio de un jardín sin continuidad: varias familias plantean qué
+    pasa cuando sus hijos egresan. Y cuatro proponen rifas o eventos para financiar
+    mantenimiento, ofreciéndose a organizarlos.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>Nuestra Señora de Itatí</h3><div class="n"><b>28</b>familias</div></div>
+    <p class="meta">14 del jardín por formulario en línea, 3 de primaria y 11 sin nivel
+    indicado. Llegaron por correo, cada familia con su archivo, más una respuesta que
+    llegó como fotografía de la hoja.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">12</span>Compromiso y dedicación docente</li>
+        <li><span class="c">11</span>Calidez humana y trato cercano</li>
+        <li><span class="c">7</span>Acompañamiento y contención</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">7</span>Acompañamiento emocional</li>
+        <li><span class="c">5</span>Sin pedidos</li>
+        <li><span class="c">5</span>Lo académico</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«Es la escuela en la que crecí, la que me acompañó y sostuvo en todo mi
+      crecimiento. Gracias a la enseñanza y contensión de los docentes de Itatí decidí
+      formarme como docente.»</p>
+      <cite>Jardín</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Consideramos que sería más positivo modificar el sistema de vacantes en el paso
+      de primaria a secundaria para que no dependa del sorteo y sea más justo para todos.»</p>
+      <cite>Primaria</cite>
+    </blockquote>
+    <p class="cierre">
+    Es la comunidad con la pertenencia intergeneracional más marcada: varias familias son
+    ex-alumnas y una es además docente de la casa. El sistema de vacantes por sorteo lo
+    plantea una sola familia, y vale registrarlo porque es el único punto del material
+    donde se cuestiona una regla institucional.</p>
+  </div>
+
+  <div class="ficha">
+    <div class="ficha-top"><h3>San José (Moreno)</h3><div class="n"><b>23</b>familias</div></div>
+    <p class="meta">10 de jardín, 6 de primaria y 6 de secundaria. Llegaron por correo, una
+    por familia, más dos en PDF. Es la comunidad con la distribución más pareja entre los
+    tres niveles.</p>
+    <div class="dos">
+      <div><h4>Qué valoran</h4><ul class="tags">
+        <li><span class="c">12</span>Compromiso y dedicación docente</li>
+        <li><span class="c">8</span>Acompañamiento y contención</li>
+        <li><span class="c">8</span>Calidez humana y trato cercano</li></ul></div>
+      <div><h4>Qué piden</h4><ul class="tags">
+        <li><span class="c">9</span>Acompañamiento emocional</li>
+        <li><span class="c">6</span>Convivencia y bullying</li>
+        <li><span class="c">5</span>Lo espiritual</li></ul></div>
+    </div>
+    <blockquote>
+      <p>«En cuanto al Jardín de Infantes, donde actualmente asiste nuestra hija menor,
+      consideramos que hoy es el sector que mejor funciona dentro de la institución.»</p>
+      <cite>Jardín y primaria 5°</cite>
+    </blockquote>
+    <blockquote>
+      <p>«Hemos escuchado comentarios e inquietudes de otros padres sobre situaciones
+      relacionadas con la convivencia entre alumnos y algunas cuestiones de mantenimiento e
+      infraestructura. Si bien no hemos vivido esas experiencias personalmente, son temas
+      que nos generan preocupación al pensar en el futuro recorrido educativo de nuestro
+      hijo dentro de la institución.»</p>
+      <cite>Jardín</cite>
+    </blockquote>
+    <p class="cierre">
+    Es la única comunidad donde lo espiritual entra entre los tres pedidos principales:
+    cinco familias piden más catequesis, música en la misa o participación de los chicos en
+    las celebraciones. Nueve de 23 proponen encuentros con familias, la proporción más alta
+    de toda la diócesis.</p>
+  </div>
+
+  <div class="nota">
+    <p class="t">Ocho familias sin comunidad asignada</p>
+    <p>Ocho respuestas llegaron como archivos sueltos cuyo texto no menciona a qué escuela
+    pertenecen. Están en el consolidado y suman a los totales diocesanos, pero no aparecen
+    en ninguna ficha. Identificarlas es cuestión de revisar el correo por el que llegaron;
+    hasta entonces, cada comunidad está subrepresentada en una cifra que no se puede
+    repartir.</p>
+  </div>
+</section>
+
+<!-- ============ 7 · SEÑALES ============ -->
+<section id="senales">
+  <div class="sec-head"><div class="sec-num">07</div><div>
+    <h2>Señales que piden respuesta antes que análisis</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Dieciséis respuestas que no entran en un gráfico de frecuencias</p>
+  </div></div>
+
+  <p>Dentro de las 304 respuestas hay dieciséis que no describen una preferencia sino una
+  situación. Una familia que pide «más trabajo sobre lo emocional» y una familia que
+  cuenta un episodio concreto ocupan la misma celda de la misma planilla, y sumadas en un
+  promedio la segunda desaparece.</p>
+
+  <p>Esas dieciséis respuestas están reunidas y desarrolladas en el <strong>anexo C, de
+  circulación restringida</strong>. Se apartaron del cuerpo porque su tratamiento exige
+  nombrar la comunidad, y en varios casos identificar a la familia o a la persona
+  señalada. Este cuerpo registra únicamente su existencia y su tipo.</p>
+
+  <table class="datos">
+    <thead><tr><th>Tipo de situación</th><th class="n">Respuestas</th><th>Qué tipo de decisión abre</th></tr></thead>
+    <tbody>
+      <tr><td>Baños, higiene e insumos</td><td class="n">7</td><td>Mantenimiento e insumos; en un caso, uso compartido de instalaciones entre niveles</td></tr>
+      <tr><td>Conflicto o agresión sin respuesta percibida</td><td class="n">5</td><td>Criterios de convivencia y devolución a la familia que plantea</td></tr>
+      <tr><td>Salud mental y autolesiones</td><td class="n">3</td><td>Derivación, formación del personal y acompañamiento</td></tr>
+      <tr><td>Consumo, apuestas en línea y grooming</td><td class="n">3</td><td>Contenido preventivo y trabajo con familias</td></tr>
+      <tr><td>Comunicación de un hecho grave</td><td class="n">1</td><td>Protocolo de comunicación institucional ante una emergencia</td></tr>
+    </tbody>
+  </table>
+
+  <div class="nota">
+    <p class="t">Cómo se armó el anexo C</p>
+    <p>Cada entrada del anexo tiene tres partes y ninguna más: la cita textual completa,
+    la comunidad y el nivel, y la decisión que abre. Sin adjetivos, sin interpretación y
+    sin recomendación de sanción. Cuatro de las dieciséis respuestas aparecen en más de una
+    categoría, porque una misma familia describe más de una situación.</p>
+    <p>Cinco de las siete comunidades aportan al menos una. La más extensa proviene de una
+    familia de San Francisco de Asís que dedica dos páginas al tema, y es también una de
+    las respuestas más elogiosas del material en las preguntas 1 a 3. Conviene leerla
+    entera antes de decidir cómo responderla.</p>
+  </div>
+
+  <p>Una observación sobre el conjunto: doce de las dieciséis provienen de familias que en
+  las otras preguntas expresan conformidad y agradecimiento. Ninguna pide una sanción.
+  Todas piden saber qué se hizo.</p>
+</section>
+
+<!-- ============ 8 · DECISIONES ============ -->
+<section id="decisiones">
+  <div class="sec-head"><div class="sec-num">08</div><div>
+    <h2>Decisiones que abre este material</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Agrupadas por alcance, no por urgencia</p>
+  </div></div>
+
+  <p>Los pedidos de las familias no se resuelven todos en el mismo lugar. Algunos requieren
+  un criterio común para toda la diócesis, otros dependen de los recursos y la
+  administración de cada institución, y otros pueden empezar el mes que viene en un aula.
+  Están separados así, y no por importancia.</p>
+
+  <div class="bloques">
+    <div class="bloque">
+      <h4>De alcance diocesano</h4>
+      <ul>
+        <li><strong>Un criterio común de acompañamiento emocional.</strong> Es el pedido
+        que encabeza en las siete comunidades, y hoy cada escuela lo resuelve con lo que
+        tiene. Definir qué se entiende por acompañamiento emocional en jardín, en primaria
+        y en secundaria evita que la respuesta dependa de la sensibilidad de cada equipo.</li>
+        <li><strong>Un protocolo de comunicación ante hechos graves.</strong> Lo abre una
+        sola respuesta, pero describe un problema que cualquier comunidad puede tener: qué
+        se informa, por qué canal y en qué plazo cuando ocurre algo dentro de la escuela.</li>
+        <li><strong>Criterios de derivación en salud mental adolescente.</strong> Tres
+        respuestas mencionan autolesiones. Ninguna escuela sola puede construir la red;
+        la diócesis puede definir a dónde se deriva y con qué acompañamiento.</li>
+        <li><strong>Cómo y cuándo se repite esta consulta.</strong> Si se vuelve a hacer,
+        conviene un cuestionario único con las cinco preguntas —cinco de los formularios
+        de este año traían solo cuatro— y un campo obligatorio de nivel y colegio, que es
+        lo que hoy deja 48 respuestas sin corte posible.</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h4>De gestión institucional</h4>
+      <ul>
+        <li><strong>Equipo de orientación.</strong> Pedido por su nombre en Perpetuo
+        Socorro y en San Francisco de Asís, y descrito sin nombrarlo en varias respuestas
+        más. Es la traducción concreta del pedido emocional cuando la familia piensa en
+        cómo se implementa.</li>
+        <li><strong>Infraestructura y mantenimiento.</strong> Baños, pintura, climatización
+        de las aulas y agua accesible para los estudiantes. Diez familias lo mencionan en
+        la pregunta 4 y siete más en el anexo C. Varias se ofrecen a colaborar en el
+        financiamiento.</li>
+        <li><strong>Costo de las salidas educativas.</strong> Doce familias piden más
+        salidas y varias anticipan la objeción económica proponiendo rifas o colectas.
+        Trece familias eligieron la escuela por su cuota accesible: el costo de una salida
+        no es un detalle administrativo para ellas.</li>
+        <li><strong>Continuidad entre niveles.</strong> El paso de jardín a primero aparece
+        descrito como abrupto, y en un jardín sin primaria las familias preguntan qué pasa
+        después. En Itatí, el sistema de vacantes por sorteo entre primaria y secundaria lo
+        plantea una familia como un problema de justicia.</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h4>De trabajo cotidiano</h4>
+      <ul>
+        <li><strong>Encuentros y talleres con las familias.</strong> La propuesta más
+        repetida de todo el material: 51 familias. Una condición práctica que aparece en
+        varias respuestas: cerca del horario de salida, porque muchas trabajan.</li>
+        <li><strong>Espacios de escucha para los estudiantes.</strong> 24 familias los
+        piden, casi todas de secundaria, y describen el formato: un lugar donde hablar de
+        bullying, adicciones y peleas, y buscar salidas en grupo.</li>
+        <li><strong>Convivencia trabajada antes del conflicto.</strong> 49 familias.
+        Aparece formulado como prevención, no como reacción.</li>
+        <li><strong>Proyectos solidarios y comunitarios.</strong> 17 familias los proponen,
+        y varias se ofrecen a organizarlos. Es el único pedido del material que llega con
+        mano de obra incluida.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9 · ESTADO ============ -->
+<section id="estado">
+  <div class="sec-head"><div class="sec-num">09</div><div>
+    <h2>Estado de la muestra</h2>
+    <p class="eyebrow" style="margin:.4rem 0 0">Qué está cargado, qué queda por resolver</p>
+  </div></div>
+
+  <p>No queda material sin transcribir. Los 304 registros incluyen todo lo que llegó en
+  texto digital, las 190 páginas manuscritas escaneadas y la única respuesta que llegó
+  como fotografía. Lo que sigue son las salvedades que conviene tener a la vista antes de
+  usar este material para decidir.</p>
+
+  <table class="datos">
+    <thead><tr><th>Pendiente</th><th>Alcance</th><th>Cómo se resuelve</th></tr></thead>
+    <tbody>
+      <tr><td>8 familias sin colegio asignado</td><td>8 de 304</td><td>Revisar el correo por el que llegó cada archivo</td></tr>
+      <tr><td>48 respuestas sin nivel</td><td>29 de San Francisco, 11 de Itatí, 8 sin colegio</td><td>Las hojas no traían el campo; solo se recupera preguntando</td></tr>
+      <tr><td>Formulario del jardín de Itatí</td><td>2 respuestas</td><td>El tablero de julio contó 16 y el archivo exportado tiene 14: volver a descargarlo</td></tr>
+      <tr><td>Dos familias con la misma respuesta duplicada</td><td>Perpetuo Socorro</td><td>Envío doble del formulario; se conservaron las dos filas</td></tr>
+      <tr><td>Tres archivos con texto idéntico</td><td>San José (Moreno)</td><td>Puede ser un texto modelo circulando entre familias: confirmar con la escuela</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Transcripciones con alguna limitación</h3>
+  <ul class="plain">
+    <li>Una respuesta de Perpetuo Socorro secundaria proviene de un escaneo muy desvaído y
+    se leyó a ojo; sus respuestas son cortas y conviene contrastarlas.</li>
+    <li>En Cristo Salvador el escáner cortó el margen derecho de varias hojas. El corte
+    está marcado con corchetes para que no se lea como si la familia hubiera escrito eso.</li>
+    <li>En San Francisco de Asís falta la primera hoja de una carta, de modo que sus
+    preguntas 1 y 2 quedaron vacías; y en otra hoja el margen izquierdo se reconstruyó
+    entre corchetes.</li>
+    <li>Setenta respuestas llegaron sin firma. En Libertad secundaria, tres apellidos se
+    leyeron con dudas y quedaron señalados en el consolidado.</li>
+  </ul>
+
+  <div class="nota">
+    <p class="t">Si esta consulta se repite</p>
+    <p>Tres correcciones de método harían el próximo corte comparable: un cuestionario
+    único con las cinco preguntas para todas las comunidades, un campo obligatorio de
+    colegio y nivel, y un canal común de recepción. El trabajo de este año consistió en
+    buena medida en reconstruir esos tres datos a partir de archivos que llegaron por
+    caminos distintos.</p>
+  </div>
+</section>
+
+<!-- ============ ANEXOS ============ -->
+<section id="anexos">
+  <div class="sec-head"><div class="sec-num">—</div><div>
+    <h2>Anexos</h2>
+  </div></div>
+
+  <table class="datos">
+    <thead><tr><th>Anexo</th><th>Contenido</th><th>Circulación</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A</strong></td><td>Tabla completa de las 304 respuestas, con colegio,
+      nivel y las cinco preguntas. Archivo <code>respuestas.csv</code>. La versión
+      <code>respuestas-consolidado.csv</code> agrega el archivo de origen de cada
+      respuesta, para rastrear cualquier cita hasta su hoja.</td><td>Con el documento</td></tr>
+      <tr><td><strong>B</strong></td><td>Las citas usadas en este informe, con su número de
+      fila en el consolidado y su archivo de origen.</td><td>Con el documento</td></tr>
+      <tr><td><strong>C</strong></td><td>Las dieciséis respuestas de la sección 7,
+      completas, con comunidad, nivel y la decisión que abre cada una.</td><td>Restringida</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>Encuesta a las familias · Proyecto Pastoral Educativo Diocesano · Merlo-Moreno · Prot. 67/2026 JUREC<br>
+  304 respuestas transcritas y verificadas una por una. Los conteos temáticos describen a
+  las familias que escribieron, no a la matrícula de la diócesis.</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('nav.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
+  if(!('IntersectionObserver' in window)||!secs.length) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(a){a.classList.remove('on')});
+      var m=links.filter(function(a){return a.getAttribute('href')==='#'+e.target.id})[0];
+      if(m) m.classList.add('on');
+    });
+  },{rootMargin:'-10% 0px -75% 0px',threshold:0});
+  secs.forEach(function(s){io.observe(s)});
+})();
+</script>
+</body>
+</html>
